@@ -1,6 +1,11 @@
 ﻿namespace IronCompress {
     public enum Codec {
         /// <summary>
+        /// No compression applied at all
+        /// </summary>
+        Uncompressed = 0,
+
+        /// <summary>
         /// Google Snappy. Has managed and native implementations.
         /// </summary>
         Snappy = 1,

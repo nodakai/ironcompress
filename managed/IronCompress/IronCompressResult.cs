@@ -35,6 +35,10 @@ namespace IronCompress {
         /// </summary>
         public bool NativeUsed { get; }
 
+        /// <summary>
+        /// Returns data buffer as span. non copying is performed.
+        /// </summary>
+        /// <returns></returns>
         public Span<byte> AsSpan() =>
            _data.AsSpan(0, Length);
 
