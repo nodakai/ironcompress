@@ -86,7 +86,10 @@ namespace IronCompress {
         public IronCompressResult Decompress(
            Codec codec,
            ReadOnlySpan<byte> input,
-           int? outputLength = null) {
+           int outputLength) {
+
+            if(outputLength <= 0)
+                throw new ArgumentOutOfRangeException(nameof(outputLength), "Required to be positive (known beforehand).");
 
             if(ForcePlatform != null) {
                 if(ForcePlatform == Platform.Native) {
